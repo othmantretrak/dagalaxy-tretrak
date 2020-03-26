@@ -20,7 +20,7 @@ const Header = () => {
     <header className="header">
       <div className="logo">
         <Link className="title" to="/">
-          <img src={logo} alt="taghrida logo" />
+          <img src={logo} alt="dagalaxy logo" />
         </Link>
       </div>
       <Drawer nav={nav} />

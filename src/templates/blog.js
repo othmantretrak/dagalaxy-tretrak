@@ -74,15 +74,8 @@ const Blog = props => {
           <p>{props.data.swapi.article.excerpt}</p>
           <div className="ads-more">
             <div className="ads1">
-              <GoogleAd />
+              <InArticleAd />
             </div>
-            {/* <button
-              className="btn-hide"
-              onClick={() => sethide("block")}
-              style={{ display: hide === "block" ? "none" : "block" }}
-            >
-              أكمل قراءة الموضوع ...
-            </button> */}
           </div>
 
           <div
@@ -93,15 +86,7 @@ const Blog = props => {
           />
 
           <div className="ads1">
-            <InArticleAd />
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-1063328225356164"
-              data-ad-slot="5092374925"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            ></ins>
+            <GoogleAd />
           </div>
         </div>
         <h3>Share This Post</h3>
