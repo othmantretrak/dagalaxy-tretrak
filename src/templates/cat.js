@@ -24,7 +24,7 @@ const category = props => {
     <Layout>
       <SEO
         title={props.data.swapi.cat.title}
-        keywords={[`${props.data.swapi.cat.title}`, `Dagalaxy`, `تغريدة `]}
+        keywords={[`${props.data.swapi.cat.title}`, `Dagalaxy`]}
       />
       <div className="wrap">
         <h2 className="heading-h2">
