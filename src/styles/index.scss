@@ -270,8 +270,14 @@ nav ul li {
     //text-align: right;
   }
   .body-post {
-    padding: 0px 2.7rem;
+    ul {
+      padding: 1.9rem;
+    }
+    ol {
+      padding: 1.9rem;
+    }
   }
+
   .blog-footer {
     display: flex;
     justify-content: space-around;

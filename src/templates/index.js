@@ -30,7 +30,22 @@ const IndexPage = ({ pageContext }) => {
               <div key={edge.slug} className="card">
                 <Link to={`/${edge.slug}`}>
                   <div className="thumb">
-                    <img src={edge.imgUri} alt={edge.title} />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`${edge.imgUri}?w=800&fit=fill&fm=webp`}
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 992px)"
+                        srcSet={`${edge.imgUri}?w=600&fit=fill&fm=webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        src={`${edge.imgUri}?w=400&fit=fill&fm=webp`}
+                        alt={edge.title}
+                      />
+                    </picture>
                   </div>
 
                   <div className="info">

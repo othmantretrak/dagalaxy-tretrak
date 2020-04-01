@@ -33,7 +33,22 @@ const Tag = props => {
               <div key={article.slug} className="card">
                 <Link to={`/${article.slug}`}>
                   <div className="thumb">
-                    <img src={article.imgUri} alt={article.title} />
+                    <picture>
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`${article.imgUri}?w=800&fit=fill&fm=webp`}
+                        type="image/webp"
+                      />
+                      <source
+                        media="(min-width: 992px)"
+                        srcSet={`${article.imgUri}?w=600&fit=fill&fm=webp`}
+                        type="image/webp"
+                      />
+                      <img
+                        src={`${article.imgUri}?w=400&fit=fill&fm=webp`}
+                        alt={article.title}
+                      />
+                    </picture>
                   </div>
 
                   <div className="info">
