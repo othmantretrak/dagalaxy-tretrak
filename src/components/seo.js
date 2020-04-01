@@ -88,9 +88,9 @@ function SEO({ description, lang, meta, keywords, title, image }) {
 }
 
 SEO.defaultProps = {
-  lang: `ar`,
+  lang: `en`,
   meta: [],
-  image: `https://ta4rida.com${defaultimg}`,
+  image: `https://dagalaxy.com${defaultimg}`,
   keywords: [],
   description: ``,
 }

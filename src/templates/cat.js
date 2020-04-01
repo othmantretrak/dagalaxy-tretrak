@@ -9,6 +9,7 @@ export const query = graphql`
     swapi {
       cat(id: $catId) {
         title
+        slug
         articles(limit: 10) {
           slug
           imgUri

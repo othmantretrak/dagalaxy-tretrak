@@ -25,6 +25,7 @@ export const query = graphql`
         author
         cat {
           title
+          slug
           articles(limit: 4) {
             id
             title
@@ -64,7 +65,7 @@ const Blog = props => {
         <div className="badgelist">
           <div>
             <span>Category: </span>
-            <Link to={`/category/${props.data.swapi.article.cat.title}`}>
+            <Link to={`/category/${props.data.swapi.article.cat.slug}`}>
               <p className="badge">{props.data.swapi.article.cat.title}</p>
             </Link>
           </div>
