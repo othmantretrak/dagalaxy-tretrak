@@ -21,7 +21,7 @@ const Tag = props => {
     <Layout>
       <SEO
         title={props.pageContext.tag}
-        keywords={[`${props.pageContext.tag}`, `Dagalaxy`, `تغريدة `]}
+        keywords={[`${props.pageContext.tag}`, `Dagalaxy`, `new stories`]}
       />
       <div className="wrap">
         <h2 className="heading-h2">

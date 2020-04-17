@@ -19,7 +19,10 @@ const IndexPage = ({ pageContext }) => {
 
   return (
     <Layout>
-      <SEO title="Home - dagalaxy" keywords={[`اخبار`, `تغريدة`, `مواضيع`]} />
+      <SEO
+        title="Home - dagalaxy"
+        keywords={[`dagalxy`, `story`, `love`, `health`]}
+      />
       <div className="wrap">
         <h2 className="heading-h2">
           <span className="heading-span">Blogs</span>

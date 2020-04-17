@@ -8,13 +8,13 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share"
-//import { FacebookProvider, Page } from "react-facebook"
+import { FacebookProvider, Page } from "react-facebook"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RelatedPost from "../components/related"
-import GoogleAd from "../components/GoogleAd"
-import InArticleAd from "../components/inArticleAd"
+//import GoogleAd from "../components/GoogleAd"
+//import InArticleAd from "../components/inArticleAd"
 
 export const query = graphql`
   query($id: ID!) {
@@ -87,9 +87,7 @@ const Blog = props => {
         <div className="content">
           <p>{props.data.swapi.article.excerpt}</p>
           <div className="ads-more">
-            <div className="ads1">
-              <InArticleAd />
-            </div>
+            <div className="ads1">{/* <InArticleAd /> */}</div>
           </div>
 
           <div
@@ -99,9 +97,7 @@ const Blog = props => {
             }}
           />
 
-          <div className="ads1">
-            <GoogleAd />
-          </div>
+          <div className="ads1">{/* <GoogleAd /> */}</div>
         </div>
         <h3>Share This Post</h3>
         <div className="share">
@@ -125,12 +121,15 @@ const Blog = props => {
           </WhatsappShareButton>
         </div>
 
-        {/* <div className="page-fb">
-          <span>إنضم إلينا على صفحتنا في الفيسبوك لتشاهد المزيد</span>
-          <FacebookProvider appId="991319730968312" language="ar_AR">
-            <Page href="https://www.facebook.com/ta4rida" tabs="timeline" />
+        <div className="page-fb">
+          <span>Follow Us on Facebook</span>
+          <FacebookProvider appId="991319730968312" language="en_EN">
+            <Page
+              href="https://www.facebook.com/Buzzbuzzu.magazine"
+              tabs="timeline"
+            />
           </FacebookProvider>
-        </div> */}
+        </div>
 
         <RelatedPost related={related} />
         {props.data.swapi.article.tags.length > 0 && (
