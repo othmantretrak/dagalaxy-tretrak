@@ -1,4 +1,5 @@
 import React from "react"
+import stripHtml from "string-strip-html"
 import { graphql, Link } from "gatsby"
 import {
   FacebookShareButton,
@@ -46,12 +47,17 @@ const Blog = props => {
   const related = props.data.swapi.article.cat.articles.filter(function(ele) {
     return ele.id !== props.pageContext.id
   })
+
   return (
     <Layout>
       <SEO
         title={props.data.swapi.article.title}
         keywords={props.data.swapi.article.tags}
         image={props.data.swapi.article.imgUri}
+        description={`${stripHtml(props.data.swapi.article.excerpt).substring(
+          0,
+          160
+        )}...`}
       />
       <div className="wrap blog">
         <h1>{props.data.swapi.article.title}</h1>

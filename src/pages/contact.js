@@ -15,11 +15,15 @@ const ContactPage = () => {
         </div>
         <form className="myForm">
           <div className="contact">
-            <label>Name</label>
-            <input type="text" id="name" />
+            <label htmlFor="name">
+              Name
+              <input type="text" id="name" />
+            </label>
 
-            <label>Email</label>
-            <input type="email" id="email" />
+            <label htmlFor="email">
+              Email
+              <input type="email" id="email" />
+            </label>
 
             <button type="submit">Send</button>
           </div>
