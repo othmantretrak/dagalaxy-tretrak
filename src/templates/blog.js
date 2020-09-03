@@ -9,13 +9,13 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share"
-import { FacebookProvider, Page } from "react-facebook"
+import { FacebookProvider, Like } from "react-facebook"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RelatedPost from "../components/related"
-//import GoogleAd from "../components/GoogleAd"
-//import InArticleAd from "../components/inArticleAd"
+import GoogleAd from "../components/GoogleAd"
+import InArticleAd from "../components/inArticleAd"
 
 export const query = graphql`
   query($id: ID!) {
@@ -96,8 +96,8 @@ const Blog = props => {
               __html: props.data.swapi.article.excerpt,
             }}
           />
-          <div className="ads-more">
-            <div className="ads1">{/* <InArticleAd /> */}</div>
+          <div className="ads1">
+            <GoogleAd />
           </div>
 
           <div
@@ -106,9 +106,22 @@ const Blog = props => {
               __html: props.data.swapi.article.content,
             }}
           />
-
-          <div className="ads1">{/* <GoogleAd /> */}</div>
+          <div className="page-fb">
+            <FacebookProvider appId="991319730968312" language="en_EN">
+              <Like
+                href="https://www.facebook.com/dagalxy"
+                colorScheme="light"
+                layout="button_count"
+                showFaces
+                share
+              />
+            </FacebookProvider>
+          </div>
+          <div className="ads1">
+            <InArticleAd />
+          </div>
         </div>
+
         <h3>Share This Post</h3>
         <div className="share">
           <FacebookShareButton
@@ -131,7 +144,7 @@ const Blog = props => {
           </WhatsappShareButton>
         </div>
 
-        <div className="page-fb">
+        {/*  <div className="page-fb">
           <span>Follow Us on Facebook</span>
           <FacebookProvider appId="991319730968312" language="en_EN">
             <Page
@@ -139,7 +152,7 @@ const Blog = props => {
               tabs="timeline"
             />
           </FacebookProvider>
-        </div>
+        </div> */}
 
         <RelatedPost related={related} />
         {props.data.swapi.article.tags.length > 0 && (
