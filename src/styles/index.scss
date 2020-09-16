@@ -271,6 +271,11 @@ nav ul li {
     //text-align: right;
   }
   .body-post {
+    .source {
+      display: block;
+      font-size: 13px;
+      color: #232323e6;
+    }
     ul {
       padding: 1.9rem;
     }
@@ -398,6 +403,25 @@ footer {
 }
 
 .share {
+  .shareBox {
+    display: flex;
+    justify-content: space-around;
+    width: 85px;
+    align-items: center;
+    cursor: pointer;
+    .fbshareBox {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      .count {
+        font-weight: bold;
+      }
+      .shares {
+        font-size: 10px;
+      }
+    }
+  }
   display: flex;
   padding-top: 2rem;
   border-top: 1px solid #c1ced2;
