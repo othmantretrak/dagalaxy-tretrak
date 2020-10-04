@@ -2,7 +2,11 @@ import React, { useEffect } from "react"
 
 const InArticleAd = () => {
   useEffect(() => {
-    ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    try {
+      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    } catch (err) {
+      console.log(err)
+    }
   }, [])
   return (
     <ins
