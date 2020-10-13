@@ -39,6 +39,7 @@ module.exports = {
         fieldName: "swapi",
         // Url to query from
         url: "https://dagalaxy-graph-mongo.herokuapp.com",
+        //url: "http://localhost:4000/",
       },
     },
     "gatsby-plugin-sass",

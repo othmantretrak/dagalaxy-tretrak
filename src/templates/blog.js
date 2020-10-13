@@ -1,4 +1,6 @@
 import React from "react"
+import parse from "html-react-parser"
+import Img from "gatsby-image"
 import stripHtml from "string-strip-html"
 import { graphql, Link } from "gatsby"
 
@@ -41,7 +43,25 @@ const Blog = props => {
   const related = props.data.swapi.article.cat.articles.filter(function(ele) {
     return ele.id !== props.pageContext.id
   })
+  const rrr = (imgArr, content) => {
+    let arrspli = content.split("img")
+    return arrspli.map((e, i) => {
+      let u = e.replace("->", "").replace("<-", "")
+      return (
+        <>
+          {parse(u)}
+          <Img fluid={imgArr[i]} />
+        </>
+      )
+    })
+  }
 
+  const contentModifyed = props.pageContext.modifiedData.images
+    ? rrr(
+        props.pageContext.modifiedData.images,
+        props.data.swapi.article.content
+      )
+    : parse(props.data.swapi.article.content)
   return (
     <Layout>
       <SEO
@@ -56,7 +76,8 @@ const Blog = props => {
       <div className="wrap blog">
         <h1>{props.data.swapi.article.title}</h1>
         <div className="thumb">
-          <picture>
+          <Img fluid={props.pageContext.modifiedData.img} />
+          {/* <picture>
             <source
               media="(min-width: 1200px)"
               srcSet={`${props.data.swapi.article.imgUri}?w=800&fit=fill&fm=webp`}
@@ -72,7 +93,7 @@ const Blog = props => {
               src={`${props.data.swapi.article.imgUri}?w=400&fit=fill&fm=webp`}
               alt={props.data.swapi.article.title}
             />
-          </picture>
+          </picture> */}
         </div>
 
         <div className="badgelist">
@@ -93,13 +114,14 @@ const Blog = props => {
           <div className="ads1">
             <GoogleAd />
           </div>
+          <div className="body-post">{contentModifyed}</div>
 
-          <div
+          {/* <div
             className="body-post"
             dangerouslySetInnerHTML={{
-              __html: props.data.swapi.article.content,
+              __html: contentModifyed,
             }}
-          />
+          /> */}
           <div className="page-fb">
             <FacebookProvider appId="991319730968312" language="en_EN">
               <Like
